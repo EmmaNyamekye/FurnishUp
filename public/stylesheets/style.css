@@ -25,6 +25,8 @@ a.navbar-brand{
   font: "Leckerli One", "Arima", "Open Sans", sans-serif !important; /*???*/
 }
 
+
+/*signIn Page Style*/
 .mb-3{
   width: 100%;
   padding: 4%;
@@ -49,9 +51,6 @@ a.navbar-brand{
   border: 1px solid #AD623D;
 }
 
-
-/*signIn Page Style*/
-
 .gradient-custom-2 {  
   background-color: #AD623D;
   color:#FFFEE7; 
@@ -67,6 +66,11 @@ a.navbar-brand{
 }
 
 
+
+
+.row.g-0{
+  flex-wrap: none;
+}
 
 
 /*
