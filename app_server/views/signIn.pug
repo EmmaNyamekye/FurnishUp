@@ -1,7 +1,75 @@
-extends layout
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap' rel='stylesheet')
 
-block content
-  h1= title
-  p Welcome to #{title}
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-lightnavbar.navbar.fixed-top.navbar-light.bg-body-tertiary
+      a.navbar-brand(href='/') FurnishUp
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='signUp') SIGN UP
+          li.nav-item
+            a.nav-link(href='signIn') SIGN IN
+
+    block content
+      script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
+      script(src='/javascripts/bootstrap.min.js')
+
+
+    section.h-100.gradient-form
+      .container.py-5.h-100
+        .row.d-flex.justify-content-center.align-items-center.h-100
+          .col-xl-10
+            .card.rounded-3.text-black
+              .row.g-0
+                .col-lg-6
+                  .card-body.p-md-5.mx-md-4
+                    .text-center
+                      h4.mt-1.mb-5.pb-1 SIGN IN
+                    form
+                      .form-outline.mb-4(data-mdb-input-init='')
+                        label.form-label(for='form2Example11') Email
+                        input#form2Example11.form-control(type='email')
+        
+                      .form-outline.mb-4(data-mdb-input-init='')
+                        label.form-label(for='form2Example22') Password
+                        input#form2Example22.form-control(type='password')
+                        
+                      .text-center.pt-1.mb-5.pb-1
+                        button.btn.btn-primary.btn-block.fa-lg.gradient-custom-2.mb-3(data-mdb-button-init='' data-mdb-ripple-init='' type='button')
+                          | LOG IN
+                        
+                      .d-flex.align-items-center.justify-content-center.pb-4
+                        p.mb-0.me-2 You don&apos;t have an account?
+                        button.btn.btn-outline-danger(type='button' data-mdb-button-init='' data-mdb-ripple-init='') Create one
+                .col-lg-6.d-flex.align-items-center.gradient-custom-2
+                  .text-white.px-3.py-4.p-md-5.mx-md-4
+                    h4.mb-4 #[strong FurnishUp]
+                    p.small.mb-0
+                      | Do you want to get rid of old but still usable furnisher or unwanted kitchenware?
+                      br
+                      
+                      | #[strong FurnishUp] is the place for you!
+                      br
+                      br
+                      | Are you in need of good used furnisher or kitchenware?
+                      br
+                      
+                      | #[strong FurnishUp] is the place for you!
+
+      
+
+
 
 

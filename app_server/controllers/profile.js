@@ -1,8 +1,13 @@
 /* GET profile page */
 const profile = function(req, res){
-    res.render('profile', { title: 'FurnishUp - Profile page' });
+    res.render('profile', { title: 'FurnishUp' });
     };
-module.exports = {
-    profile
-};
 
+const profileTitle = function(req, res){
+    res.render('profile', { titlePage: 'FurnishUp - Profile page' });
+    };
+
+module.exports = {
+    profile,
+    profileTitle
+};

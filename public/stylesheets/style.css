@@ -1,10 +1,73 @@
-body {
-  font: "Arima", "Open Sans", sans-serif, Arial;
+@import url("https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/*FONT DOES NOT WORK ???*/
+
+
+body{
+  font: "Arima", "Open Sans", sans-serif, Arial !important; /*???*/
+  background-color: #FFFEE7;
 }
 
-a {
-  color: #00B7FF;
+.navbar{
+  padding: 1% 2%;
+  background-color: #AD623D !important;
+  
 }
+
+.navbar-nav a:hover{
+  color: #AD623D;
+  background-color: #FFFEE7;
+  border-radius: 10%;
+}
+
+/*Move SIGN IN and SIGN UP on the right ???*/
+
+a.navbar-brand{
+  font: "Leckerli One", "Arima", "Open Sans", sans-serif !important; /*???*/
+}
+
+.mb-3{
+  width: 100%;
+  padding: 4%;
+  border: 1px solid #FFFEE7;
+  border-radius: 30px;
+}
+
+.pb-1 button:hover{
+  color: #AD623D;
+  background-color: #FFFEE7;
+  border: 1px solid #AD623D;
+}
+
+.pb-4 button:hover{
+  color: #FFFEE7;
+  background-color: #AD623D;
+  border: 1px solid #FFFEE7;
+}
+
+.pb-4 button{
+  color: #AD623D;
+  border: 1px solid #AD623D;
+}
+
+
+/*signIn Page Style*/
+
+.gradient-custom-2 {  
+  background-color: #AD623D;
+  color:#FFFEE7; 
+}
+
+.small.mb-0{
+  color: #FFFEE7;
+}
+
+.mb-5,
+.form-label{
+  color: #AD623D;
+}
+
+
+
 
 /*
 // <uniquifier>: Use a unique and descriptive class name
