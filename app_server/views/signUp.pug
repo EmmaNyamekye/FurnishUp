@@ -11,7 +11,7 @@ html
 
   body
     nav.navbar.navbar-expand-lg.navbar-light.bg-lightnavbar.navbar.fixed-top.navbar-light.bg-body-tertiary
-      a.navbar-brand(href='/') FurnishUp
+      a.navbar-brand.font-change(href='/') FurnishUp
       button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarNav.collapse.navbar-collapse
@@ -60,18 +60,20 @@ html
                             label.form-label(for='form3Example1n') City
                             input#form3Example1n.form-control.form-control-lg(type='text')
                          
+                      .row
+                        .col-md-6.mb-4
+                          .form-outline(data-mdb-input-init='')
+                            label.form-label(for='form2Example11') Email
+                            input#form2Example11.form-control(type='email')
 
-                      .form-outline.mb-4(data-mdb-input-init='')
-                        label.form-label(for='form2Example11') Email
-                        input#form2Example11.form-control(type='email')
-        
-                      .form-outline.mb-4(data-mdb-input-init='')
-                        label.form-label(for='form2Example22') Password
-                        input#form2Example22.form-control(type='password')
+                        .col-md-6.mb-4        
+                          .form-outline(data-mdb-input-init='')
+                            label.form-label(for='form2Example22') Password
+                            input#form2Example22.form-control(type='password')
          
                       .text-center.pt-1.mb-5.pb-1
                         button.btn.btn-primary.btn-block.fa-lg.gradient-custom-2.mb-3(data-mdb-button-init='' data-mdb-ripple-init='' type='button')
-                          | LOG IN
+                          | REGISTER
 
                 .col-lg-6.d-flex.align-items-center.gradient-custom-2
                   .text-white.px-3.py-4.p-md-5.mx-md-4

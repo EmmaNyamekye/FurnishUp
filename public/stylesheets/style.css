@@ -21,8 +21,8 @@ body{
 
 /*Move SIGN IN and SIGN UP on the right ???*/
 
-a.navbar-brand{
-  font: "Leckerli One", "Arima", "Open Sans", sans-serif !important; /*???*/
+.font-change{
+  font: "Leckerli One", "Arima", "Open Sans", sans-serif !important;
 }
 
 
@@ -67,9 +67,11 @@ a.navbar-brand{
 
 
 
-
-.row.g-0{
-  flex-wrap: none;
+.card{
+  margin: 1%;
+}
+.card-title{
+  color: #AD623D;
 }
 
 

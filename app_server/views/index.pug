@@ -1,7 +1,82 @@
-extends layout
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
 
-block content
-  h1= title
-  p Welcome to #{title}
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href='/') FurnishUp
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href='signUp') SIGN UP
+          li.nav-item
+            a.nav-link(href='signIn') SIGN IN
 
+    block content
+      script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
+      script(src='/javascripts/bootstrap.min.js')
   
+    .card-group
+      .card
+        img.card-img-top(src='C:/Users/t00229159/Downloads/Image/bed.png' alt='Pair of chairs')
+        .card-body
+          h5.card-title Pair of Chairs
+          small.text-muted Tralee
+          p.card-text
+            | Warm and inviting acacia wood chairs, perfect for adding a touch of nature to your outdoor space.
+          small.text-muted fname.lname@example.com
+
+      .card
+        img.card-img-top(src='C:/Users/t00229159/Downloads/Image/bed.png' alt='Cutting board and cutlery set')
+        .card-body
+          h5.card-title Cutting Board and Cutlery Set
+          small.text-muted Killarney
+          p.card-text
+            | This wooden cutting board and utensil set shows signs of use, but is still in excellent working order.
+          small.text-muted fname.lname@example.com
+
+      .card
+        img.card-img-top(src='C:/Users/t00229159/Downloads/Image/bed.png' alt='Pot with lid')
+        .card-body
+          h5.card-title Pot with Lid
+          small.text-muted Tralee
+          p.card-text
+            | This versatile stainless steel pot is ideal for preparing soups, sauces, and more. Includes a glass lid for easy monitoring of your cooking.
+          small.text-muted fname.lname@example.com
+
+    .card-group
+      .card
+        img.card-img-top(src='C:/Users/t00229159/Downloads/Image/bed.png' alt='Dutch ovens')
+        .card-body
+          h5.card-title Dutch Ovens
+          small.text-muted Tralee
+          p.card-text
+            | This red Le Creuset Dutch oven has been well-cared for and shows very little wear.
+          small.text-muted fname.lname@example.com
+
+      .card
+        img.card-img-top(src='C:/Users/t00229159/Downloads/Image/bed.png' alt='Table')
+        .card-body
+          h5.card-title Table
+          small.text-muted Killarney
+          p.card-text
+            | This sleek black dining table is perfect for everyday meals and special occasions. It extends to comfortably seat 6-8 people, making it ideal for entertaining guests.
+          small.text-muted fname.lname@example.com
+
+      .card
+        img.card-img-top(src='C:/Users/t00229159/Downloads/Image/bed.png' alt='Bed with matching bed frame')
+        .card-body
+          h5.card-title Bed with Matching Bed Frame
+          small.text-muted Killarney
+          p.card-text
+            | This single bed has been well-cared for and shows very little wear. Perfect for those seeking quality used furniture.
+          small.text-muted fname.lname@example.com
+
