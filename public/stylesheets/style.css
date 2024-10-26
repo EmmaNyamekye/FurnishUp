@@ -3,7 +3,6 @@
 
 
 body{
-  font: "Arima", "Open Sans", sans-serif, Arial !important; /*???*/
   background-color: #FFFEE7;
 }
 
@@ -17,12 +16,6 @@ body{
   color: #AD623D;
   background-color: #FFFEE7;
   border-radius: 10%;
-}
-
-/*Move SIGN IN and SIGN UP on the right ???*/
-
-.font-change{
-  font: "Leckerli One", "Arima", "Open Sans", sans-serif !important;
 }
 
 
@@ -74,6 +67,13 @@ body{
   color: #AD623D;
 }
 
+footer.bg-body-tertiary h5{
+  text-align: center;
+  padding: 0.5%;
+  margin: 2% 0%;
+  background-color: #AD623D;
+  color: #FFFEE7;
+}
 
 /*
 // <uniquifier>: Use a unique and descriptive class name
