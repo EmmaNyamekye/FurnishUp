@@ -8,15 +8,14 @@ FurnishUp is a web application for exchanging or getting rid of used but functio
 - Installation
 - Usage
 - Routes
-- License
 
 ## Installation
 ### Step 1: Clone the Repository
 Clone this repository:
 
 ```bash
-git clone https://github.com/your-username/web-frameworks-project.git ?
-cd web-frameworks-project ?
+git clone https://github.com/EmmaNyamekye/FurnishUp.git
+cd FurnishUp
 ```
 
 ### Step 2: Install Node Package Manager (NPM)
@@ -64,6 +63,6 @@ http://localhost:3000
 
 ## Routes
 Once the server is running, you can use the following routes to navigate the application:
-Home Page: http://localhost:3000/
-Sign Up Page: http://localhost:3000/signup
-Sign In Page: http://localhost:3000/signin
+- Home Page: http://localhost:3000/
+- Sign Up Page: http://localhost:3000/signup
+- Sign In Page: http://localhost:3000/signin
