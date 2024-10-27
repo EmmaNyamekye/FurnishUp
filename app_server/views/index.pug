@@ -1,59 +1,12 @@
 extends layout
-    
-block content 
+
+block content
   .card-group
-    .card
-      img.card-img-top(src='https://github.com/EmmaNyamekye/FurnishUp/blob/main/public/images/chairs_image.png?raw=true' alt='Pair of chairs')
-      .card-body
-        h5.card-title Pair of Chairs
-        small.text-muted Tralee
-        p.card-text
-          | Warm and inviting acacia wood chairs, perfect for adding a touch of nature to your outdoor space.
-        small.text-muted fname.lname@example.com
-
-    .card
-      img.card-img-top(src='https://github.com/EmmaNyamekye/FurnishUp/blob/main/public/images/cutting_board_image.png?raw=true' alt='Cutting board and cutlery set')
-      .card-body
-        h5.card-title Cutting Board and Cutlery Set
-        small.text-muted Killarney
-        p.card-text
-          | This wooden cutting board and utensil set shows signs of use, but is still in excellent working order.
-        small.text-muted fname.lname@example.com
-
-    .card
-      img.card-img-top(src='https://github.com/EmmaNyamekye/FurnishUp/blob/main/public/images/pot_image.png?raw=true' alt='Pot with lid')
-      .card-body
-        h5.card-title Pot with Lid
-        small.text-muted Tralee
-        p.card-text
-          | This versatile stainless steel pot is ideal for preparing soups, sauces, and more. Includes a glass lid for easy monitoring of your cooking.
-        small.text-muted fname.lname@example.com
-
-  .card-group
-    .card
-      img.card-img-top(src='https://github.com/EmmaNyamekye/FurnishUp/blob/main/public/images/dutch_oven_image.png?raw=true' alt='Dutch ovens')
-      .card-body
-        h5.card-title Dutch Ovens
-        small.text-muted Tralee
-        p.card-text
-          | This red Le Creuset Dutch oven has been well-cared for and shows very little wear.
-        small.text-muted fname.lname@example.com
-
-    .card
-      img.card-img-top(src='https://github.com/EmmaNyamekye/FurnishUp/blob/main/public/images/table_image.png?raw=true' alt='Table')
-      .card-body
-        h5.card-title Table
-        small.text-muted Killarney
-        p.card-text
-          | This sleek black dining table is perfect for everyday meals and special occasions. It extends to comfortably seat 6-8 people, making it ideal for entertaining guests.
-        small.text-muted fname.lname@example.com
-
-    .card
-      img.card-img-top(src='https://github.com/EmmaNyamekye/FurnishUp/blob/main/public/images/bed_image.png?raw=true' alt='Bed with matching bed frame')
-      .card-body
-        h5.card-title Bed with Matching Bed Frame
-        small.text-muted Killarney
-        p.card-text
-          | This single bed has been well-cared for and shows very little wear. Perfect for those seeking quality used furniture.
-        small.text-muted fname.lname@example.com
-
+    each product in products
+      .card
+        img.card-img-top(src=product.imageUrl, alt=product.name)
+        .card-body
+          h5.card-title= product.name
+          small.text-muted= product.location
+          p.card-text= product.description
+          small.text-muted= product.contact

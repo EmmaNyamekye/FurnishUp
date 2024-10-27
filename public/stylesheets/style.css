@@ -1,15 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-/*FONT DOES NOT WORK ???*/
-
-
 body{
   background-color: #FFFEE7;
+  margin-top: 4%;
 }
 
 .navbar{
   padding: 1% 2%;
   background-color: #AD623D !important;
-  
 }
 
 .navbar-nav a:hover{
@@ -19,7 +15,6 @@ body{
 }
 
 
-/*signIn Page Style*/
 .mb-3{
   width: 100%;
   padding: 4%;
