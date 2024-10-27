@@ -1,7 +1,7 @@
-Web Frameworks Project
+# Web Frameworks Project
 This project is a web application built using Node.js and Express, showcasing the fundamentals of web frameworks. It includes essential routes for signing up and signing in and can be deployed locally for testing and development purposes.
 
-FurnishUp
+# FurnishUp
 FurnishUp is a web application for exchanging or getting rid of used but functional furniture and kitchenware. It primarily caters to students living away from home who often need affordable furniture but lack options for used items.
 
 Table of Contents
