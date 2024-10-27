@@ -43,7 +43,6 @@ const products = [
     }
 ];
 
-// `index` function renders the home page
 const index = function(req, res) {
     res.render('index', { title: 'FurnishUp', products: products });
 };
