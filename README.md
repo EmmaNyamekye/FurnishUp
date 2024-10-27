@@ -5,19 +5,22 @@ This project is a web application built using Node.js and Express, showcasing th
 FurnishUp is a web application for exchanging or getting rid of used but functional furniture and kitchenware. It primarily caters to students living away from home who often need affordable furniture but lack options for used items.
 
 ## Table of Contents
-Installation
-Usage
-Routes
-License
-Installation
-Step 1: Clone the Repository
+- Installation
+- Usage
+- Routes
+- License
+- Installation
+
+## Step 1: Clone the Repository
 Clone this repository to your local machine:
 
-bash
+```bash
 Copy code
 git clone https://github.com/your-username/web-frameworks-project.git
 cd web-frameworks-project
-Step 2: Install Node Package Manager (NPM)
+```
+
+## Step 2: Install Node Package Manager (NPM)
 Ensure you have the latest version of npm installed. Run the following command to install or update npm globally:
 
 bash
