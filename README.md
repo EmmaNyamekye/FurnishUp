@@ -1,5 +1,5 @@
 # Web Frameworks Project
-This project is a web application built using Node.js and Express, showcasing the fundamentals of web frameworks. It includes essential routes for signing up and signing in and can be deployed locally for testing and development purposes.
+This project is a web application built using “MEAN”, whitch stands for MongoDB, Express, AngularJS, and Node.js.
 
 # FurnishUp
 FurnishUp is a web application for exchanging or getting rid of used but functional furniture and kitchenware. It primarily caters to students living away from home who often need affordable furniture but lack options for used items.
@@ -19,13 +19,13 @@ cd FurnishUp
 ```
 
 ### Step 2: Install Node Package Manager (NPM)
-Ensure you have the latest version of npm installed. Run the following command to install or update npm:
+Ensure you have the latest version of npm is installed. Run the following command to install or update npm:
 
 ```bash
 npm install -g npm
 ```
 
-### Step 3: Install Dependencies
+### Step 3: Install Express
 Install Express by running:
 
 ```bash
