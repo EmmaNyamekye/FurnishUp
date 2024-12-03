@@ -1,3 +1,5 @@
+// app_server/controllers/signUp.js
+
 /* GET signUp page */
 const signUp = function(req, res){
     const description = `Do you want to get rid of old but still usable furniture or unwanted kitchenware?<br>
