@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container
+    .row
+      each product in products
+        .col-md-4
+          .card
+            img.card-img-top(src=product.imageUrl, alt=product.name)
+            .card-body
+              h5.card-title= product.name
+              small.text-muted= product.location
+              p.card-text= product.description
+              small.text-muted= product.contact

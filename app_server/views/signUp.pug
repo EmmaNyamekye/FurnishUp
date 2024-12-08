@@ -1,0 +1,59 @@
+extends layout
+    
+block content 
+  section.h-100.gradient-form
+    .container.py-5.h-100
+      .row.d-flex.justify-content-center.align-items-center.h-100
+        .col-xl-10
+          .card.rounded-3.text-black
+            .row.g-0
+              .col-lg-6
+                .card-body.p-md-5.mx-md-4
+                  .text-center
+                    h4.mt-1.mb-5.pb-1 SIGN UP
+                  form
+                    .row
+                      .col-md-6.mb-4
+                        .form-outline(data-mdb-input-init='')
+                          label.form-label(for='fname') First name
+                          input#form3Example1m.form-control.form-control-lg(type='text')
+                          
+                      .col-md-6.mb-4
+                        .form-outline(data-mdb-input-init='')
+                          label.form-label(for='lname') Last name
+                          input#form3Example1n.form-control.form-control-lg(type='text')
+                                      
+                    .row
+                      .col-md-6.mb-4
+                        .form-outline(data-mdb-input-init='')
+                          label.form-label(for='address') Address
+                          input#form3Example1m.form-control.form-control-lg(type='text')
+                          
+                      .col-md-6.mb-4
+                        .form-outline(data-mdb-input-init='')
+                          label.form-label(for='city') City
+                          input#form3Example1n.form-control.form-control-lg(type='text')
+                        
+                    .row
+                      .col-md-6.mb-4
+                        .form-outline(data-mdb-input-init='')
+                          label.form-label(for='email') Email
+                          input#form2Example11.form-control(type='email')
+
+                      .col-md-6.mb-4        
+                        .form-outline(data-mdb-input-init='')
+                          label.form-label(for='pw') Password
+                          input#form2Example22.form-control(type='password')
+        
+                    .text-center.pt-1.mb-5.pb-1
+                      button.btn.btn-primary.btn-block.fa-lg.gradient-custom-2.mb-3(data-mdb-button-init='' data-mdb-ripple-init='' type='button')
+                        | REGISTER
+
+              .col-lg-6.d-flex.align-items-center.gradient-custom-2
+                .text-white.px-3.py-4.p-md-5.mx-md-4
+                  h4.mb-4 #[strong #{title}]
+                  p.small.mb-0
+                    != description
+
+  
+

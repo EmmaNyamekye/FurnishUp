@@ -1,0 +1,37 @@
+extends layout
+    
+block content 
+  section.h-100.gradient-form
+    .container.py-5.h-100
+      .row.d-flex.justify-content-center.align-items-center.h-100
+        .col-xl-10
+          .card.rounded-3.text-black
+            .row.g-0
+              .col-lg-6
+                .card-body.p-md-5.mx-md-4
+                  .text-center
+                    h4.mt-1.mb-5.pb-1 SIGN IN
+                  form
+                    .form-outline.mb-4(data-mdb-input-init='')
+                      label.form-label(for='form2Example11') Email
+                      input#form2Example11.form-control(type='email')
+      
+                    .form-outline.mb-4(data-mdb-input-init='')
+                      label.form-label(for='form2Example22') Password
+                      input#form2Example22.form-control(type='password')
+                      
+                    .text-center.pt-1.mb-5.pb-1
+                      button.btn.btn-primary.btn-block.fa-lg.gradient-custom-2.mb-3(data-mdb-button-init='' data-mdb-ripple-init='' type='button')
+                        | LOG IN
+                      
+                    .d-flex.align-items-center.justify-content-center.pb-4
+                      p.mb-0.me-2 You don&apos;t have an account?
+                      button.btn.btn-outline-danger(type='button' data-mdb-button-init='' data-mdb-ripple-init='' onclick="window.location.href='/signup'") Create one
+              .col-lg-6.d-flex.align-items-center.gradient-custom-2
+                .text-white.px-3.py-4.p-md-5.mx-md-4
+                  h4.mb-4 #[strong #{title}]
+                  p.small.mb-0
+                    != description
+
+
+
