@@ -9,6 +9,20 @@ const ctrlSignIn = require('../controllers/signIn');
 /* Define routes */
 router.get('/', ctrlMain.index);
 router.get('/signup', ctrlSignUp.signUp); 
-router.get('/signin', ctrlSignIn.signIn); 
+router.get('/signin', ctrlSignIn.signIn);
+
+router.get('/logout', (req, res, next) => { 
+    req.logout((err) => { 
+        if (err) { 
+            return next(err); 
+        } 
+    }); 
+    req.session.save((err) => { 
+        if (err) { 
+            return next(err); 
+        } 
+        res.redirect('/'); 
+    }); 
+}); 
 
 module.exports = router;
