@@ -11,7 +11,7 @@ block content
                 .card-body.p-md-5.mx-md-4
                   .text-center
                     h4.mt-1.mb-5.pb-1 SIGN IN
-                  form
+                  form(role='form', action="/login",method="post")
                     .form-outline.mb-4(data-mdb-input-init='')
                       label.form-label(for='form2Example11') Email
                       input#form2Example11.form-control(type='email')
@@ -21,7 +21,7 @@ block content
                       input#form2Example22.form-control(type='password')
                       
                     .text-center.pt-1.mb-5.pb-1
-                      button.btn.btn-primary.btn-block.fa-lg.gradient-custom-2.mb-3(data-mdb-button-init='' data-mdb-ripple-init='' type='button')
+                      button.btn.btn-primary.btn-block.fa-lg.gradient-custom-2.mb-3(type='submit')
                         | LOG IN
                       
                     .d-flex.align-items-center.justify-content-center.pb-4

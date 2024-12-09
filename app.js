@@ -29,16 +29,24 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Define Routes
-app.use('/', indexRouter);
-app.use('/api', apiRouter);
+// Define Express API Routes
+app.use('/', indexRouter);      // Home Route
+app.use('/api', apiRouter);     // API Route
 
-// Catch 404 Errors
+// **Serve Angular Only for `/about` Route**
+app.use('/about', express.static(path.join(__dirname, 'angular-dist')));
+
+// **Serve Angular's index.html for `/about` Route**
+app.get('/about/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'angular-dist', 'index.html'));
+});
+
+// **Catch 404 Errors**
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
-// Error Handler
+// **Error Handler**
 app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -79,6 +87,7 @@ httpServer.listen(8000, () => console.log("HTTP Server running on port 8000"));
 httpsServer.listen(443, () => console.log("HTTPS Server running on port 443"));
 
 module.exports = app;
+
 /*
 app.use('/api', function(req, res, next) { 
   res.header('Access-Control-Allow-Origin', 

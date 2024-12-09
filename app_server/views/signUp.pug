@@ -11,43 +11,44 @@ block content
                 .card-body.p-md-5.mx-md-4
                   .text-center
                     h4.mt-1.mb-5.pb-1 SIGN UP
-                  form
+                  form(role='form', action="/register", method="post")
                     .row
                       .col-md-6.mb-4
                         .form-outline(data-mdb-input-init='')
                           label.form-label(for='fname') First name
-                          input#form3Example1m.form-control.form-control-lg(type='text')
+                          input#form3Example1m.form-control.form-control-lg(type='text' name="firstName")
                           
                       .col-md-6.mb-4
                         .form-outline(data-mdb-input-init='')
                           label.form-label(for='lname') Last name
-                          input#form3Example1n.form-control.form-control-lg(type='text')
+                          input#form3Example1n.form-control.form-control-lg(type='text' name="lastName")
                                       
                     .row
                       .col-md-6.mb-4
                         .form-outline(data-mdb-input-init='')
                           label.form-label(for='address') Address
-                          input#form3Example1m.form-control.form-control-lg(type='text')
+                          input#form3Example1m.form-control.form-control-lg(type='text' name="address")
                           
                       .col-md-6.mb-4
                         .form-outline(data-mdb-input-init='')
                           label.form-label(for='city') City
-                          input#form3Example1n.form-control.form-control-lg(type='text')
+                          input#form3Example1n.form-control.form-control-lg(type='text' name="city")
                         
                     .row
                       .col-md-6.mb-4
                         .form-outline(data-mdb-input-init='')
                           label.form-label(for='email') Email
-                          input#form2Example11.form-control(type='email')
+                          input#form2Example11.form-control(type='email' name="email")
 
                       .col-md-6.mb-4        
                         .form-outline(data-mdb-input-init='')
                           label.form-label(for='pw') Password
-                          input#form2Example22.form-control(type='password')
+                          input#form2Example22.form-control(type='password' name="password")
         
                     .text-center.pt-1.mb-5.pb-1
-                      button.btn.btn-primary.btn-block.fa-lg.gradient-custom-2.mb-3(data-mdb-button-init='' data-mdb-ripple-init='' type='button')
+                      button.btn.btn-primary.btn-block.fa-lg.gradient-custom-2.mb-3(type='submit')
                         | REGISTER
+
 
               .col-lg-6.d-flex.align-items-center.gradient-custom-2
                 .text-white.px-3.py-4.p-md-5.mx-md-4

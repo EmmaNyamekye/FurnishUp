@@ -21,28 +21,33 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/furnish-up-public",
+            "outputPath": "../../angular-dist",
             "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "main": "src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets" 
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/stylesheets/bootstrap.min.css",
+              "src/assets/stylesheets/font-awesome.min.css",
+              "src/assets/stylesheets/style.css"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -54,28 +59,33 @@
                   "maximumWarning": "4kB",
                   "maximumError": "8kB"
                 }
-              ],
-              "outputHashing": "all"
+              ]
             },
             "development": {
               "optimization": false,
+              "outputHashing": "none",
+              "sourceMap": true,
+              "namedChunks": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "vendorChunk": true,
+              "buildOptimizer": false
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "FurnishUp-public:build"
+          },
           "configurations": {
             "production": {
-              "buildTarget": "FurnishUp-public:build:production"
+              "browserTarget": "FurnishUp-public:build:production"
             },
             "development": {
-              "buildTarget": "FurnishUp-public:build:development"
+              "browserTarget": "FurnishUp-public:build:development"
             }
-          },
-          "defaultConfiguration": "development"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
@@ -83,19 +93,18 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "main": "src/test.ts",
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets" 
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/stylesheets/bootstrap.min.css",
+              "src/assets/stylesheets/font-awesome.min.css",
+              "src/assets/stylesheets/style.css"
             ],
             "scripts": []
           }

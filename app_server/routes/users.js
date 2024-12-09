@@ -16,35 +16,40 @@ router.use((req, res, next) => {
 
 // Register Route - Display Registration Form
 router.get("/register", (req, res) => {
-  res.render("register", {});
+  res.render("signUp", {}); // Render the Sign-Up page
 });
 
 // Register Route - Handle Form Submission
 router.post("/register", async (req, res, next) => {
   try {
+    // Validate fields
+    if (!req.body.firstName || !req.body.lastName || !req.body.email || !req.body.password) {
+      return res.render("signUp", { error: "All fields are required!" });
+    }
+
     const newUser = new User({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
+      address: req.body.address,
+      city: req.body.city,
       email: req.body.email,
     });
 
     // Register using Passport.js
-    User.register(
-      newUser,
-      req.body.password,
-      (err, account) => {
-        if (err) {
-          return res.render("register", { error: err.message });
-        }
-        passport.authenticate("local")(req, res, () => {
-          req.session.save((err) => {
-            if (err) return next(err);
-            res.redirect("/");
-          });
-        });
+    User.register(newUser, req.body.password, (err, account) => {
+      if (err) {
+        console.error("Registration error:", err);
+        return res.render("signUp", { error: err.message });
       }
-    );
+      passport.authenticate("local")(req, res, () => {
+        req.session.save((err) => {
+          if (err) return next(err);
+          res.redirect("/"); // Redirect to the homepage upon success
+        });
+      });
+    });
   } catch (err) {
+    console.error("Unexpected error:", err);
     next(err);
   }
 });
@@ -64,7 +69,7 @@ router.post(
   (req, res, next) => {
     req.session.save((err) => {
       if (err) return next(err);
-      res.redirect("/");
+      res.redirect("/"); // Redirect to the homepage upon success
     });
   }
 );
@@ -75,7 +80,7 @@ router.get("/logout", (req, res, next) => {
     if (err) return next(err);
     req.session.save((err) => {
       if (err) return next(err);
-      res.redirect("/");
+      res.redirect("/"); // Redirect to the homepage after logout
     });
   });
 });
