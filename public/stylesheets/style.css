@@ -1,11 +1,21 @@
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
 body{
   background-color: #FFFEE7;
   margin-top: 4%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+}
+
 .navbar{
   padding: 1% 2%;
   background-color: #AD623D !important;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
 }
 
 .navbar-nav a:hover{

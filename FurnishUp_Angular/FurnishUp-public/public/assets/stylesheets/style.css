@@ -2,8 +2,6 @@
 
 body {
   font-family: "Cabin", Arial, sans-serif;
-  color: #ffffff;
-  background-color: #108a93;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,8 +9,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar {
-  background-color: #ad1d28;
-  border-color: #911821;
+  padding: 1% 2%;
+  background-color: #AD623D !important;
 }
 
 .navbar-brand {
@@ -82,4 +80,29 @@ h4 small {
 
 legend {
   font-family: 'Lobster', cursive;
+}
+
+.navbar-nav a:hover{
+  color: #AD623D;
+  background-color: #FFFEE7;
+  border-radius: 10%;
+}
+
+.mb-3{
+  width: 100%;
+  padding: 4%;
+  border: 1px solid #FFFEE7;
+  border-radius: 30px;
+}
+
+.pb-1 button:hover{
+  color: #AD623D;
+  background-color: #FFFEE7;
+  border: 1px solid #AD623D;
+}
+
+.pb-4 button:hover{
+  color: #FFFEE7;
+  background-color: #AD623D;
+  border: 1px solid #FFFEE7;
 }
