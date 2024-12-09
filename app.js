@@ -1,19 +1,22 @@
 // filename = app.js
 
 // Core Modules and Dependencies
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
 
 // Database and Routes
 require('./app_api/models/db');
-const indexRouter = require('./app_server/routes/index');
+var indexRouter = require('./app_server/routes/index');
 const apiRouter = require('./app_api/routes/index');
 
 // Initialize Express App
-const app = express();
+var app = express();
 
 // View Engine Setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
@@ -31,40 +34,43 @@ app.use('/', indexRouter);
 app.use('/api', apiRouter);
 
 // Catch 404 Errors
-app.use((req, res, next) => {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // Error Handler
-app.use((err, req, res, next) => {
+app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   res.status(err.status || 500);
   res.render('error');
 });
 
-// SSL Certificate Setup
-const https = require('https');
-
-// Check for Environment Variables or Local Files
+// Load SSL Certificates for HTTPS
 let privateKey, certificate;
 
-if (process.env.SSL_KEY && process.env.SSL_CERT) {
-  // Use Environment Variables (Production)
-  privateKey = Buffer.from(process.env.SSL_KEY, 'base64').toString('utf8');
-  certificate = Buffer.from(process.env.SSL_CERT, 'base64').toString('utf8');
-} else {
-  // Use Local Files (Development)
-  const fs = require('fs');
-  privateKey = fs.readFileSync('./sslcert/key.pem', 'utf8');
-  certificate = fs.readFileSync('./sslcert/cert.pem', 'utf8');
+// Detect if Running on Render (Production) or Local Environment
+try {
+  if (fs.existsSync('/etc/secrets/key.pem') && fs.existsSync('/etc/secrets/cert.pem')) {
+    // Render Deployment (Secret Files)
+    privateKey = fs.readFileSync('/etc/secrets/key.pem', 'utf8');
+    certificate = fs.readFileSync('/etc/secrets/cert.pem', 'utf8');
+    console.log("Loaded SSL certificates from Render secrets.");
+  } else {
+    // Local Development
+    privateKey = fs.readFileSync('./sslcert/key.pem', 'utf8');
+    certificate = fs.readFileSync('./sslcert/cert.pem', 'utf8');
+    console.log("Loaded SSL certificates from local directory.");
+  }
+} catch (error) {
+  console.error("Failed to load SSL certificates:", error);
+  process.exit(1);
 }
 
 // Set SSL Credentials
 const credentials = { key: privateKey, cert: certificate };
 
 // Create Servers
-const http = require('http');
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
@@ -73,8 +79,6 @@ httpServer.listen(8000, () => console.log("HTTP Server running on port 8000"));
 httpsServer.listen(443, () => console.log("HTTPS Server running on port 443"));
 
 module.exports = app;
-
-
 /*
 app.use('/api', function(req, res, next) { 
   res.header('Access-Control-Allow-Origin', 
